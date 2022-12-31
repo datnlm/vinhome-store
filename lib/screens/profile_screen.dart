@@ -201,7 +201,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     setState(() {
       isLoading = true;
     });
-
     var docSnapshot = await db.collection("users").doc(auth.currentUser!.email).get();
     if (docSnapshot.exists) {
       Map<String, dynamic>? data = docSnapshot.data();
